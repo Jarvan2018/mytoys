@@ -1,9 +1,20 @@
 #!/bin/bash
 source shared.sh
 
+cd /workspace
+mkdir MyGoogleDrive
+git clone https://github.com/comfyanonymous/ComfyUI
+python -m venv myenv --prompt ComfyUI
+# 使用python虚拟环境
+source myenv/bin/activate
+cd ComfyUI
+pip install xformers!=0.0.18 -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cu117
+
+
+
 # 使用python虚拟环境
 # source /venv/bin/activate
-source /workspace/myenv/bin/activate
+# source /workspace/myenv/bin/activate
 
 # 可能需要安装 很多都依赖 
 sudo apt-get update
@@ -124,40 +135,22 @@ python -m pip install opencv-python
 
 # --------需要安装依赖的节点 END ------
 
-
+# 如果报错请打开
 
 # Install ComfyUI-to-Python
-cd /workspace/ComfyUI
-git clone https://github.com/pydn/ComfyUI-to-Python-Extension.git
-cd ComfyUI-to-Python-Extension
-pip install -r requirements.txt
-
-# Import times for custom nodes:
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-Image-Selector
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-Embedding_Picker
-#    0.0 seconds (IMPORT FAILED): /workspace/ComfyUI/custom_nodes/.ipynb_checkpoints
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-Advanced-ControlNet
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI_ADV_CLIP_emb
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI_UltimateSDUpscale
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux
-#    0.0 seconds: /workspace/ComfyUI/custom_nodes/Derfuu_ComfyUI_ModdedNodes
-#    0.1 seconds: /workspace/ComfyUI/custom_nodes/AIGODLIKE-COMFYUI-TRANSLATION
-#    0.1 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-WD14-Tagger
-#    0.1 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-Manager
-#    0.3 seconds: /workspace/ComfyUI/custom_nodes/SeargeSDXL
-#    1.4 seconds: /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
-#    1.9 seconds: /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui
+# cd /workspace/ComfyUI
+# git clone https://github.com/pydn/ComfyUI-to-Python-Extension.git
+# cd ComfyUI-to-Python-Extension
+# pip install -r requirements.txt
 
 
 
-echo -e "${GREEN}===========================\n${NC}"
-echo -e "${GREEN}预先下载一些Civitai和Huggingface的资源${NC}"
-echo -e "${GREEN}Pre-download some resources from Civitai and Huggingface.${NC}"
+# echo -e "${GREEN}===========================\n${NC}"
+# echo -e "${GREEN}预先下载一些Civitai和Huggingface的资源${NC}"
+# echo -e "${GREEN}Pre-download some resources from Civitai and Huggingface.${NC}"
 
 
-civitai_res_array=()
+# civitai_res_array=()
 
 # Download from Civital
 
@@ -278,10 +271,10 @@ civitai_res_array=()
 # civitai_res_array+=("https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors /workspace/ComfyUI/models/checkpoints")
 # wget https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
 
-for element in "${civitai_res_array[@]}"; do
-    handleCode "$element"
-done
+# for element in "${civitai_res_array[@]}"; do
+#     handleCode "$element"
+# done
 
 
 
-echo -e "\n${GREEN}Done!${NC}"
+echo -e "\n${GREEN}success install ComfyUI!!!${NC}"
