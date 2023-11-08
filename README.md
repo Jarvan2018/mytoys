@@ -19,3 +19,4 @@ mdkir MyGoogleDrive
 ```
 # 4 run fast_comfyUI
 
+# 5 GoogleDrive downler (colab)
