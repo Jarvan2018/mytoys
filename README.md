@@ -1,7 +1,7 @@
 
 # 1 clone
 ```shell
-git clone https://github.com/Jarvan2018/mytoys
+git clone https://github.com/Jarvan2018/mytoys.git
 ```
 # 2 mdkir MyGoogleDrive
 ```
