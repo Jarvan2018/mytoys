@@ -10,12 +10,6 @@ source myenv/bin/activate
 cd ComfyUI
 pip install xformers!=0.0.18 -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118 --extra-index-url https://download.pytorch.org/whl/cu117
 
-
-
-# 使用python虚拟环境
-# source /venv/bin/activate
-# source /workspace/myenv/bin/activate
-
 # 可能需要安装 很多都依赖 
 sudo apt-get update
 sudo apt-get install -y libgl1-mesa-glx
@@ -97,184 +91,18 @@ cd ComfyUI-VideoHelperSuite
 pip install -r requirements.txt
 
 
-
 # cd /workspace/ComfyUI/custom_nodes
 python -m pip install opencv-python
 
-# 老版本END
-
-
-# 新版本
-# git clone https://github.com/WASasquatch/was-node-suite-comfyui/
-# git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git
-# git clone https://github.com/pythongosssss/ComfyUI-WD14-Tagger
-# git clone https://github.com/Fannovel16/comfyui_controlnet_aux/
-# cd /
-# source venv/bin/activate
-# cd /workspace/ComfyUI/custom_nodes
-# python -m pip install opencv-python
-# cd /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui
-# pip install -r requirements.txt
-
-# cd /workspace/ComfyUI/custom_nodes
-# cd /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
-# # python install.py
-# git submodule update --init --recursive
-
-
-# cd /workspace/ComfyUI/custom_nodes
-# cd /workspace/ComfyUI/custom_nodes/ComfyUI-WD14-Tagger
-# pip install -r requirements.txt
-
-
-# cd /workspace/ComfyUI/custom_nodes
-# cd comfyui_controlnet_aux
-# pip install -r requirements.txt
-
-
-
-# --------需要安装依赖的节点 END ------
-
-# 如果报错请打开
-
-# Install ComfyUI-to-Python
-# cd /workspace/ComfyUI
-# git clone https://github.com/pydn/ComfyUI-to-Python-Extension.git
-# cd ComfyUI-to-Python-Extension
-# pip install -r requirements.txt
-
-
-
-# echo -e "${GREEN}===========================\n${NC}"
-# echo -e "${GREEN}预先下载一些Civitai和Huggingface的资源${NC}"
-# echo -e "${GREEN}Pre-download some resources from Civitai and Huggingface.${NC}"
-
-
-# civitai_res_array=()
-
-# Download from Civital
-
-
-
-
-
-## Checkpoint model
-
-### SDXL
-# civitai_res_array+=("https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors /workspace/ComfyUI/models/checkpoints")
-# civitai_res_array+=("https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors /workspace/ComfyUI/models/checkpoints")
-
-### realistic XL with 1.5
-# civitai_res_array+=("https://civitai.com/models/4201/realistic-vision-v20")
-
-# civitai_res_array+=("https://civitai.com/models/139562/realvisxl-v20")
-
-# ### ReV-Animated-EOL-1.2.2
-# civitai_res_array+=("https://civitai.com/models/7371/rev-animated?modelVersionId=46846")
-
-# ### Counterfeit-V3.0
-# civitai_res_array+=("https://civitai.com/models/4468")
-
-# ### CuteYukiMix
-# civitai_res_array+=("https://civitai.com/models/28169/cuteyukimixadorable-style?modelVersionId=195410")
-
-
-### majicMIX realistic
-# civitai_res_array+=("https://civitai.com/models/43331")
-
-### beautiful-realistic-asians
-# civitai_res_array+=("https://civitai.com/models/25494/beautiful-realistic-asians")
-
-### epiCRealism
-# civitai_res_array+=("https://civitai.com/models/25694/epicrealism")
-
-
-## embeddings
-
-### easynegative.safetensors
-# civitai_res_array+=("https://civitai.com/api/download/models/9208")
-
-### badhandv4.pt
-# civitai_res_array+=("https://civitai.com/api/download/models/20068")
-
-### bad-picture-negative
-# civitai_res_array+=("https://civitai.com/models/17083/bad-picture-negative-embedding-for-chilloutmix")
-
-# BadDream.pt
-# civitai_res_array+=("https://civitai.com/models/72437?modelVersionId=77169")
-
-
-
-# Download from  Huggingface
-## upscale
-# civitai_res_array+=("https://huggingface.co/embed/upscale/resolve/main/4x-UltraSharp.pth /workspace/ComfyUI/models/upscale_models")
-# civitai_res_array+=("https://huggingface.co/gemasai/4x_NMKD-Siax_200k/resolve/main/4x_NMKD-Siax_200k.pth /workspace/ComfyUI/models/upscale_models")
-
-
-## VAE
-# civitai_res_array+=("https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors /workspace/ComfyUI/models/vae")
-
-## controlnet model 先不下载
-
-### openpose
-# civitai_res_array+=("https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth /workspace/ComfyUI/models/controlnet")
-# ### tile
-# civitai_res_array+=("https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth /workspace/ComfyUI/models/controlnet")
-# ### qrcode_monster
-# civitai_res_array+=("https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/v2/control_v1p_sd15_qrcode_monster_v2.yaml /workspace/ComfyUI/models/controlnet")
-# civitai_res_array+=("https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/v2/control_v1p_sd15_qrcode_monster_v2.safetensors /workspace/ComfyUI/models/controlnet")
-# ### qrcode_monster_v1
-# civitai_res_array+=("https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/control_v1p_sd15_qrcode_monster.yaml /workspace/ComfyUI/models/controlnet")
-# civitai_res_array+=("https://huggingface.co/monster-labs/control_v1p_sd15_qrcode_monster/resolve/main/control_v1p_sd15_qrcode_monster.safetensors /workspace/ComfyUI/models/controlnet")
-
-# ### control_v11p_sd15_inpaint
-# civitai_res_array+=("https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth /workspace/ComfyUI/models/controlnet")
-# civitai_res_array+=("https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.yaml /workspace/ComfyUI/models/controlnet")
-
-### qr_code 
-# civitai_res_array+=("https://huggingface.co/DionTimmer/controlnet_qrcode-control_v1p_sd15/resolve/main/control_v1p_sd15_qrcode.safetensors /workspace/ComfyUI/models/controlnet")
-# civitai_res_array+=("https://huggingface.co/DionTimmer/controlnet_qrcode-control_v1p_sd15/resolve/main/control_v1p_sd15_qrcode.yaml /workspace/ComfyUI/models/controlnet")
-
-# civitai_res_array+=("https://huggingface.co/TencentARC/t2i-adapter-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors /workspace/ComfyUI/models/controlnet")
-
-
-# AnimateDiff Model
-# civitai_res_array+=("https://huggingface.co/guoyww/animatediff/resolve/main/mm_sd_v15_v2.ckpt /workspace/ComfyUI/custom_nodes/ComfyUI-AnimateDiff/models")
-
-# # gligen_models
-# civitai_res_array+=("https://huggingface.co/comfyanonymous/GLIGEN_pruned_safetensors/resolve/main/gligen_sd14_textbox_pruned_fp16.safetensors /workspace/ComfyUI/models/gligen")
-
-# clip_vision
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/pytorch_model.bin /workspace/ComfyUI/models/clip_vision")
-
-
-# ComfyUI_IPAdapter_plus_clip_vision
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors /workspace/ComfyUI/models/clip_vision")
-#创建一下 SDXL 文件夹
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors /workspace/ComfyUI/models/clip_vision/SDXL/")
-
-# IPAdapter-ComfyUI
-## adapter_sd15
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.bin /workspace/ComfyUI/custom_nodes/IPAdapter-ComfyUI/models")
-
-# ComfyUI_IPAdapter_plus
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter_sd15.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/blob/main/models/ip-adapter_sd15_light.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus-face_sd15.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-# civitai_res_array+=("https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.bin /workspace/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus/models")
-
-# unClip
-
-# civitai_res_array+=("https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors /workspace/ComfyUI/models/checkpoints")
-# wget https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
-
-# for element in "${civitai_res_array[@]}"; do
-#     handleCode "$element"
-# done
-
-
 
 echo -e "\n${GREEN}success install ComfyUI!!!${NC}"
+
+
+echo -e "\n${GREEN}run ComfyUI......${NC}"
+
+python setup_cloudflared.py --port 8188
+wait
+
+cd /workspace/ComfyUI
+source /workspace/myenv/bin/activate
+python main.py --dont-print-server
