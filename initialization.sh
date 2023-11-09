@@ -1,6 +1,11 @@
 #!/bin/bash
 source shared.sh
 
+
+# 获取脚本所在的目录
+current_script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+
 cd /workspace
 mkdir MyGoogleDrive
 git clone https://github.com/comfyanonymous/ComfyUI
@@ -100,11 +105,8 @@ echo -e "\n${GREEN}success install ComfyUI!!!${NC}"
 
 echo -e "\n${GREEN}run ComfyUI......${NC}"
 
-# 获取脚本所在的目录
-script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 # 切换到脚本所在的目录
-cd "$script_dir"
+cd "$current_script_dir"
 
 python setup_cloudflared.py --port 8188
 wait
