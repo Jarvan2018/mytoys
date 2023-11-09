@@ -38,12 +38,12 @@ echo -e "${GREEN}===========================\n${NC}"
 
 # install custom_nodes
 cd /workspace/ComfyUI/custom_nodes
+git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 # git clone https://github.com/LucianoCirino/efficiency-nodes-comfyui.git
 git clone https://github.com/twri/sdxl_prompt_styler.git
 git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive
 git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
 git clone https://github.com/SLAPaper/ComfyUI-Image-Selector.git
-git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 git clone https://github.com/Tropfchen/ComfyUI-Embedding_Picker.git
 git clone https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION.git
 git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
