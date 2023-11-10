@@ -96,6 +96,12 @@ cd ComfyUI-VideoHelperSuite
 pip install -r requirements.txt
 
 
+# 新增放大
+cd /workspace/ComfyUI/custom_nodes
+git clone https://github.com/BlenderNeko/ComfyUI_TiledKSampler.git
+
+
+
 # cd /workspace/ComfyUI/custom_nodes
 python -m pip install opencv-python
 
